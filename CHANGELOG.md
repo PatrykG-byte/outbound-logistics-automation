@@ -1,11 +1,11 @@
-# Changelog (Case Study)
+# Changelog
 
-## v1.0-case-study
-- Added intake scanning state machine (EUT → STAGE → PALLET → TOTs) with cache-based duplicate prevention.
-- Added archive transform (SKAN → DAILY + LIVE + TOT MAPA) with normalized rows.
-- Added motherboard merge logic (Archive LIVE + WMS time + Receive) into a single TOT-level dataset.
-- Added FIFO Board aggregation per STAGE (pallet count + oldest shipment time + deadlines).
-- Added Receive flow snippet with validation targets documented (some production integrations left as TODO).
-- Added documentation: architecture, sheets schema, data contracts, validation overview.
-- Added synthetic sample CSVs (no production data).
-- Removed all production identifiers and operational exports; replaced with placeholders.
+## Production (internal)
+- Deployed Google Sheets + Apps Script workflow: intake scan → archive → merge WMS time → FIFO board → receive confirmation.
+- Implemented validations (format/order/duplicates), FIFO deadlines (+8h / +20h), and operational retention (rolling LIVE + history).
+- Ran in warehouse operations for several weeks; iterated fixes based on operator feedback. (Details redacted)
+
+## Public repository (sanitized)
+- Published selected snippets + docs to explain architecture and logic.
+- Removed production IDs and real datasets; added synthetic samples.
+- Marked missing wiring as **(TO BE FILLED IN)** to enable safe reproduction.
