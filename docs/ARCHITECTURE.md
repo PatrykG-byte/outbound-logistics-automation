@@ -21,7 +21,9 @@ This document describes the end-to-end workflow and the role of each module.
 Purpose:
 - enforce scan order: EUT → STAGE → PALLET → TOTs
 - validate formats and prevent duplicates during active scanning window
+- blocks the input of incorrect data in a given step.
 - prepare data for archiving
+- block duplicates 
 
 Main behaviors:
 - phase/state machine stored in Script Properties (phase, current EUT/STAGE/DC)
@@ -53,7 +55,7 @@ Purpose:
 - write `[Pallet, receiveTime]` into `Recive Dane`
 - remove that pallet from **Archive LIVE**, so it disappears from FIFO
 
-Validation (CV build target):
+Validation :
 - accept only pallet format `DC...`
 - block duplicates (same pallet sent twice)
 - require pallet to exist in Archive LIVE at the time of processing
