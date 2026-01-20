@@ -1,4 +1,4 @@
-#Sanitized public extract from a production-used warehouse workflow automation (IDs/data removed).
+# Sanitized public extract from a production-used warehouse workflow automation (IDs/data removed).
 
 This repository is a **case study + selected code snippets** from a real warehouse workflow automation.
 It is **not** a drop-in “product” repository: production spreadsheet IDs and operational data are removed.
