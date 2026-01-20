@@ -1,27 +1,57 @@
-# Selected code snippets (Apps Script)
+[Scanner Intake (Side B)]
+EUT → STAGE → DC → TOTs
+|
+v
+[Archive File]
 
-This folder contains **selected snippets** that demonstrate:
-- scan state machine design (phase-based intake)
-- validation and de-duplication patterns
-- data transformation for archiving
-- merging operational data with WMS timestamps (last-entry-wins)
-- FIFO aggregation logic
-- receive confirmation and removal from operational LIVE set
+DAILY sheets (audit history)
 
-## Safety / privacy
-- Production Spreadsheet IDs and Script IDs are removed.
-- Any value marked as **(TO BE FILLED IN)** must be provided in a private config, not committed.
+LIVE (operational rolling set, 5 days)
+ 
+TOT MAPA (TOT index)
+|
+v
+[Motherboard]
+LIVE + WMS time (Dane czas) + Receive (Recive Dane)
+|
+v
+[FIFO Board]
+STAGE-level overview + deadlines
+^
+|
+[Receive]
+scans pallet + timestamp
+-> writes Recive Dane
+-> removes pallet from Archive LIVE
 
-## Suggested snippet list
-- `scanner_state_machine.gs`
-- `archive_transform.gs`
-- `wms_import.gs`
-- `motherboard_merge.gs`
-- `fifo_aggregation.gs`
-- `receive_and_live_removal.gs`
 
-Each snippet should begin with a short header:
-- Purpose
-- Input
-- Output
-- Key validations
+---
+
+## Repository structure
+
+- `docs/ARCHITECTURE.md` — system components and flows
+- `docs/SHEETS_SCHEMA.md` — tabs + columns used per module
+- `docs/DATA_CONTRACTS.md` — code formats, merge rules, retention rules
+- `snippets/` — selected Apps Script snippets (IDs removed)
+- `samples/` — synthetic CSV examples (no production data)
+
+---
+
+## What is intentionally excluded
+
+- Production IDs (Spreadsheet IDs / Script IDs)
+- Full deployable Apps Script projects
+- Real operational data exports
+
+If you want to reproduce this system as a demo, replace placeholders marked:
+**(TO BE FILLED IN)**
+
+---
+
+## Tech stack
+
+- Google Sheets
+- Google Apps Script (JavaScript)
+- CacheService / PropertiesService patterns (state + de-duplication)
+
+co to i gdzie dac
