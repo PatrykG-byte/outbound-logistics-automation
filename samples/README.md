@@ -1,5 +1,9 @@
-# Code Snippets
+# Sample data (synthetic)
 
-Selected Apps Script snippets are provided to demonstrate validation, data transformation, and automation patterns.
-Production IDs are removed: (TO BE FILLED IN).
+This folder contains **synthetic CSVs** used only to show the expected data shape.
+No production data is included.
 
+Files:
+- `sample_live.csv` — example rows for Archive LIVE
+- `sample_dane_czas.csv` — example rows for WMS time table
+- `sample_receive.csv` — example rows for receive confirmations
